@@ -1,3 +1,7 @@
+
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,6 +44,7 @@ public class Ventana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ventana");
+        setPreferredSize(new java.awt.Dimension(800, 800));
 
         jButton1.setText("Curva");
 
@@ -48,6 +53,11 @@ public class Ventana extends javax.swing.JFrame {
         jButton3.setText("Triangulo");
 
         jButton4.setText("Cambiar color");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Cambiar estilo");
 
@@ -135,6 +145,15 @@ public class Ventana extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       JDialog d = new JDialog(this, "dialog Box");
+       JComponent newContentPane = new color();
+       newContentPane.setOpaque(true); 
+       d.setContentPane(newContentPane);           
+       d.pack();
+       d.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
