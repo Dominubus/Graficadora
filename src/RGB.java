@@ -8,6 +8,7 @@ public class RGB extends javax.swing.JFrame {
 
     
     public RGB() {
+        color = Color.BLACK;
         initComponents();
     }
 
@@ -145,12 +146,15 @@ public class RGB extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HSLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HSLActionPerformed
-        new HSL().setVisible(true);
+        hsl = new HSL();
+        hsl.setVisible(true);
+        hsl.setVentana(principal);
         this.setVisible(false);
     }//GEN-LAST:event_HSLActionPerformed
 
     private void terminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminar2ActionPerformed
         this.setVisible(false);
+        principal.setColor(color);
         this.dispose();
     }//GEN-LAST:event_terminar2ActionPerformed
 
@@ -168,7 +172,10 @@ public class RGB extends javax.swing.JFrame {
         cambiarColor();
         azul.setText("AZUL (R = " + sliderAzul.getValue() + " )");
     }//GEN-LAST:event_sliderAzulStateChanged
-
+    
+    public void setVentana(Ventana v){
+        principal = v;
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -201,7 +208,9 @@ public class RGB extends javax.swing.JFrame {
             }
         });
     }
-
+    private Color color;
+    private HSL hsl;
+    private Ventana principal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton HSL;
     private javax.swing.JLabel azul;
@@ -219,6 +228,6 @@ public class RGB extends javax.swing.JFrame {
         R = sliderRojo.getValue();
         G = sliderVerde.getValue();
         B = sliderAzul.getValue();
-        txtCampo.setBackground(new Color(R,G,B));
+        color = new Color(R,G,B);
     }
 }

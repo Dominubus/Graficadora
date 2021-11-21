@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import javax.swing.JComponent;
 import javax.swing.JDialog;
 
@@ -19,8 +20,8 @@ public class HSL extends javax.swing.JFrame {
      */
     public HSL() {
         
-        //JDialog d = new JDialog(this, "dialog Box");
-       JComponent newContentPane = new color();
+        //JDialog d = new JDialog(this, "dialog Box");       
+       newContentPane = new color();
        newContentPane.setOpaque(true); 
        this.setContentPane(newContentPane);           
        this.pack();
@@ -86,7 +87,8 @@ public class HSL extends javax.swing.JFrame {
     }//GEN-LAST:event_RGBActionPerformed
 
     private void terminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminar1ActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);        
+        principal.setColor(newContentPane.getColor());
         this.dispose();
     }//GEN-LAST:event_terminar1ActionPerformed
 
@@ -124,7 +126,12 @@ public class HSL extends javax.swing.JFrame {
             }
         });
     }
-
+    public void setVentana(Ventana v){
+        principal = v;
+    }
+    
+    private color newContentPane;
+    private Ventana principal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RGB;
     private javax.swing.JButton terminar1;

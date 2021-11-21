@@ -80,9 +80,9 @@ public class color extends javax.swing.JPanel implements ChangeListener {
         add(tcc, BorderLayout.PAGE_END);
     }
     public void stateChanged(ChangeEvent e) {
-        Color colorElejido = tcc.getColor();        
+        colorElejido = tcc.getColor();          
     }  
-    public Color getColor(){
+    public Color getColor(){        
         return colorElejido;
     }
     @SuppressWarnings("unchecked")
